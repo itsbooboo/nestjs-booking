@@ -1,0 +1,24 @@
+services:
+  book:
+    build:
+      context: .
+      dockerfile: ./apps/book/Dockerfile
+      target: development
+    command: pnpm run start:dev book
+    ports:
+      - 3000:3000
+    volumes:
+      - ./apps/book/:/app
+  auth:
+    build:
+      context: .
+      dockerfile: ./apps/auth/Dockerfile
+      target: development
+    command: pnpm run start:dev auth
+    ports:
+      - 3001:3001
+    volumes:
+      - ./apps/auth/:/app
+      
+    
+
