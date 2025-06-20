@@ -24,7 +24,7 @@ export class BookService {
   }
 
   update(_id: string, updateBookDto: UpdateBookDto) {
-    return this.bookRepository.findOneAndUpdate({_id , }, {$set : updateBookDto})
+    return this.bookRepository.findOneAndUpdate({ _id }, { $set: updateBookDto });
   }
 
   remove(_id: string) {
