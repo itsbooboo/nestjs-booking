@@ -8,7 +8,11 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./apps/book/:/app
+      - .:/app
+      - /app/node_modules
+      - /app/dist
+    environment:
+      - NODE_ENV=development
   auth:
     build:
       context: .
@@ -18,7 +22,10 @@ services:
     ports:
       - 3001:3001
     volumes:
-      - ./apps/auth/:/app
-      
-    
+      - .:/app
+      - /app/node_modules
+      - /app/dist
+    environment:
+      - NODE_ENV=development
+
 
